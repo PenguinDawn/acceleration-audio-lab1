@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css" />
+    <title>Acceleration Audio | The global leader in accelerating music</title>
+<body>
+    <header class="p-4 bg-blue-300 font-sans font-semibold">
+        <h1 class="text-[24px]">Acceleration Audio</h1>
+    </header>
+
+    <main class="flex flex-col items-center gap-5 bg-blue-100 pt-5 h-[100vh]">
+        <div class="musicInfo flex flex-col">
+            <img id="songPicture" class=" bg-gray-400 h-[200px] w-[200px] rounded-sm"/>
+            <p id="songTitle" class="text-gray-700 text-[16px]">Song Title</p>
+            <p id="songArtist" class="text-gray-700 text-[16px]">Song Artist</p>
+        </div>
+        <p class="bg-blue-300 rounded-sm px-4 py-2">Speed: <span id="speed-tracker" class="font-bold">number</span>x</p>
+        
+        <div class="flex flex-col items-start w-[50%]">
+            <audio id="audi" hidden src="" controls></audio>
+            <p>
+                <progress hidden id="progress" value="0" max="1" style="width:50%" class="bg-blue-300"></progress>
+
+                <div id="custom-progress" class="w-[100%] h-2 bg-blue-500 trasition-all rounded-full">
+                    <div id="custom-progress-bar" class="w-0 h-2 bg-blue-300 z-10 rounded-full"></div>
+                </div>
+                <p class="text-[12px] items-start" id="seconds">0:00 / 0:00</p>
+        </p>
+
+        </div>
+
+
+         <div>
+            <div class="button-holder bg-blue-200 p-5 rounded-2xl flex gap-6">
+                <button id="backwards">
+                    <i data-lucide="skip-back" class="text-blue-600 fill-blue-400"> </i>
+                </button>
+                
+                <button id="playButton">
+                    <i data-lucide="play" class="text-blue-600 fill-blue-400"> </i>
+                </button>
+                <button id="pauseButton">
+                    <i data-lucide="pause" class="text-blue-600 fill-blue-400"> </i>
+                </button>
+                <button id="forward">
+                    <i data-lucide="skip-forward" class="text-blue-600 fill-blue-400"> </i>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+    
+    
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
